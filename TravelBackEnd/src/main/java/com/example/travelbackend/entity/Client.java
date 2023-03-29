@@ -1,11 +1,15 @@
 package com.example.travelbackend.entity;
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import java.util.Set;
 
 @Entity
 public class Client extends User {
 
     private String phoneNumber;
 
+    @ManyToMany(mappedBy = "clients")
+    private Set<Client> clients;
     public Client() {
     }
 

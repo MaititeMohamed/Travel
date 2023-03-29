@@ -1,11 +1,15 @@
 package com.example.travelbackend.entity;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import java.util.Set;
 
 @Entity
 public class Guide extends User {
 
     private String phoneNumber;
 
+    @OneToMany(mappedBy = "guide")
+    private Set<Tour> tours;
     public Guide() {
         super();
     }
