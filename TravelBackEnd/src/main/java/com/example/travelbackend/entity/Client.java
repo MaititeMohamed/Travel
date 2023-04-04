@@ -8,8 +8,9 @@ public class Client extends User {
 
     private String phoneNumber;
 
-    @ManyToMany(mappedBy = "clients")
-    private Set<Client> clients;
+    @ManyToMany
+    private Set<Tour> tours;
+
     public Client() {
     }
 
@@ -24,6 +25,14 @@ public class Client extends User {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public Set<Tour> getTours() {
+        return tours;
+    }
+
+    public void setTours(Set<Tour> tours) {
+        this.tours = tours;
     }
 
     @Override

@@ -22,11 +22,12 @@ public class Tour {
 
     @ManyToOne
     private Guide guide;
+
     @ManyToMany
     @JoinTable(
             name = "tour_client",
-            joinColumns = @JoinColumn(name = "idTour"),
-            inverseJoinColumns = @JoinColumn(name = "userId"))
+            joinColumns = @JoinColumn(name = "tour_id"),
+            inverseJoinColumns = @JoinColumn(name = "client_id"))
     private Set<Client> clients = new HashSet<>();
 
     public Tour() {
