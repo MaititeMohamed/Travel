@@ -1,15 +1,15 @@
-package com.example.Booking.controller;
+package com.example.travelbackend.controller;
 
 
 
-import com.example.Booking.entity.User;
-import com.example.Booking.security.JwtUtils;
-import com.example.Booking.service.UserService;
-import com.example.Booking.util.ResponseDTO;
+
+import com.example.travelbackend.entity.User;
+import com.example.travelbackend.security.JwtUtils;
+import com.example.travelbackend.service.UserService;
+import com.example.travelbackend.util.ResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 

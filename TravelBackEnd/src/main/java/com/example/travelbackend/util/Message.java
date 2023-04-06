@@ -1,4 +1,4 @@
-package com.example.Booking.util;
+package com.example.travelbackend.util;
 
 public class Message {
 
