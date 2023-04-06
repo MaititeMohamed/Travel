@@ -26,4 +26,12 @@ public class Guide extends User {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
+    @Override
+    public String toString() {
+        return "Guide{" +
+                "phoneNumber='" + phoneNumber + '\'' +
+                ", tours=" + tours +
+                '}';
+    }
 }

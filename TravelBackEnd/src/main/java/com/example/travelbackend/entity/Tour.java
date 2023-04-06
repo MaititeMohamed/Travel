@@ -10,11 +10,11 @@ public class Tour {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idTour;
+    private Long id;
 
-    private String tourName;
+    private String name;
 
-    private String tourDescription;
+    private String description;
 
     private Date startDate;
 
@@ -23,45 +23,41 @@ public class Tour {
     @ManyToOne
     private Guide guide;
 
-    @ManyToMany
-    @JoinTable(
-            name = "tour_client",
-            joinColumns = @JoinColumn(name = "tour_id"),
-            inverseJoinColumns = @JoinColumn(name = "client_id"))
+    @ManyToMany(mappedBy = "tours")
     private Set<Client> clients = new HashSet<>();
 
     public Tour() {
     }
 
-    public Tour(String tourName, String tourDescription, Date startDate, Date endDate) {
-        this.tourName = tourName;
-        this.tourDescription = tourDescription;
+    public Tour(String name, String description, Date startDate, Date endDate) {
+        this.name = name;
+        this.description = description;
         this.startDate = startDate;
         this.endDate = endDate;
     }
 
-    public Long getIdTour() {
-        return idTour;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdTour(Long idTour) {
-        this.idTour = idTour;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getTourName() {
-        return tourName;
+    public String getName() {
+        return name;
     }
 
-    public void setTourName(String tourName) {
-        this.tourName = tourName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getTourDescription() {
-        return tourDescription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setTourDescription(String tourDescription) {
-        this.tourDescription = tourDescription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Date getStartDate() {
@@ -80,6 +76,14 @@ public class Tour {
         this.endDate = endDate;
     }
 
+    public Guide getGuide() {
+        return guide;
+    }
+
+    public void setGuide(Guide guide) {
+        this.guide = guide;
+    }
+
     public Set<Client> getClients() {
         return clients;
     }
@@ -91,11 +95,12 @@ public class Tour {
     @Override
     public String toString() {
         return "Tour{" +
-                "idTour=" + idTour +
-                ", tourName='" + tourName + '\'' +
-                ", tourDescription='" + tourDescription + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
+                ", guide=" + guide +
                 ", clients=" + clients +
                 '}';
     }

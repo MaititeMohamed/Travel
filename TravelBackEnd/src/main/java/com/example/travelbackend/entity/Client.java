@@ -1,4 +1,5 @@
 package com.example.travelbackend.entity;
+
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import java.util.Set;
@@ -14,8 +15,8 @@ public class Client extends User {
     public Client() {
     }
 
-    public Client(Long userId, String firstName, String lastName, String email, String password, Role role, Address address, String phoneNumber) {
-        super(userId, firstName, lastName, email, password, role, address);
+    public Client(Long id, String firstName, String lastName, String email, String password, Role role, Address address, String phoneNumber) {
+        super(id, firstName, lastName, email, password, role, address);
         this.phoneNumber = phoneNumber;
     }
 
@@ -39,13 +40,7 @@ public class Client extends User {
     public String toString() {
         return "Client{" +
                 "phoneNumber='" + phoneNumber + '\'' +
-                ", userId=" + getUserId() +
-                ", firstName='" + getFirstName() + '\'' +
-                ", lastName='" + getLastName() + '\'' +
-                ", email='" + getEmail() + '\'' +
-                ", password='" + getPassword() + '\'' +
-                ", role=" + getRole() +
-                ", address=" + getAddress() +
+                ", tours=" + tours +
                 '}';
     }
 }

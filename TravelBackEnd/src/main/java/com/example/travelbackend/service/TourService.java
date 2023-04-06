@@ -10,6 +10,5 @@ public class TourService {
     @Autowired
     private TourRepository tourRepository;
 
-
 }
 
