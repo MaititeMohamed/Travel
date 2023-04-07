@@ -8,5 +8,6 @@ import org.springframework.stereotype.Repository;
 public interface TourRepository extends JpaRepository<Tour, Long> {
 
 
+    Tour findByName(String name);
 }
 
