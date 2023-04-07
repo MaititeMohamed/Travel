@@ -1,4 +1,8 @@
 package com.example.travelbackend.entity;
+
+
+import com.example.travelbackend.util.Message;
+
 import javax.persistence.*;
 
 @Entity(name = "Users")
@@ -20,14 +24,11 @@ public class User {
     @JoinColumn(name = "role_id")
     private Role role;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "address_id")
-    private Address address;
 
-    public User() {
-    }
 
-    public User(Long userId, String firstName, String lastName, String email, String password, Role role, Address address) {
+    private String address;
+
+    public User(Long userId, String firstName, String lastName, String email, String password, Role role, String address) {
         this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -35,6 +36,9 @@ public class User {
         this.password = password;
         this.role = role;
         this.address = address;
+    }
+
+    public User() {
     }
 
     public Long getUserId() {
@@ -85,11 +89,11 @@ public class User {
         this.role = role;
     }
 
-    public Address getAddress() {
+    public String getAddress() {
         return address;
     }
 
-    public void setAddress(Address address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 
@@ -102,7 +106,18 @@ public class User {
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", role=" + role +
-                ", address=" + address +
+                ", address='" + address + '\'' +
                 '}';
+    }
+
+    @Transient
+    private Message message;
+
+    public Message getMessage ( ) {
+        return message;
+    }
+
+    public void setMessage ( Message message ) {
+        this.message = message;
     }
 }

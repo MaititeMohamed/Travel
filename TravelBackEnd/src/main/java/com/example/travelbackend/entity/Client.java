@@ -15,8 +15,8 @@ public class Client extends User {
     public Client() {
     }
 
-    public Client(Long id, String firstName, String lastName, String email, String password, Role role, Address address, String phoneNumber) {
-        super(id, firstName, lastName, email, password, role, address);
+    public Client(Long userId, String firstName, String lastName, String email, String password, Role role, String address, String phoneNumber) {
+        super(userId, firstName, lastName, email, password, role, address);
         this.phoneNumber = phoneNumber;
     }
 

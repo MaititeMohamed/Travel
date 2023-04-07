@@ -14,7 +14,8 @@ public class Guide extends User {
         super();
     }
 
-    public Guide(Long userId, String firstName, String lastName, String email, String password, Role role, Address address, String phoneNumber) {
+
+    public Guide(Long userId, String firstName, String lastName, String email, String password, Role role, String address, String phoneNumber) {
         super(userId, firstName, lastName, email, password, role, address);
         this.phoneNumber = phoneNumber;
     }

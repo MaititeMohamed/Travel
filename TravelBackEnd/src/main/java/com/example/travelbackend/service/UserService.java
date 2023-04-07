@@ -3,6 +3,7 @@ package com.example.travelbackend.service;
 import com.example.travelbackend.entity.User;
 import com.example.travelbackend.repository.RoleRepository;
 import com.example.travelbackend.repository.UserRepository;
+import com.example.travelbackend.util.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -18,6 +19,20 @@ public class UserService {
     UserRepository  userRepository;
     @Autowired
     RoleRepository roleRepository;
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //security
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         User user=userRepository.findUserByEmail(email);
 
