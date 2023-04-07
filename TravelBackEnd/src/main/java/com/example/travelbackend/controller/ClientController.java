@@ -22,10 +22,15 @@ public class ClientController {
 
 
 
-    @DeleteMapping(path = "deleteClient/{clientId}")
-    public Message deleteClient(@PathVariable("clientId") Long clientId)
-    {
-        return clientService.deleteClient(clientId);
+    @DeleteMapping("/deleteClientById/{id}")
+    public Integer deleteClientById(@PathVariable("id") Long id){
+        return clientService.deleteClientById(id);
+    }
+
+
+    @PutMapping("/updateClient")
+    public  Client updateClient(@RequestBody Client client){
+        return clientService.updateClient(client);
     }
 }
 

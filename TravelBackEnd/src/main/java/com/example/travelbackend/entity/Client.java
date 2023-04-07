@@ -1,10 +1,13 @@
 package com.example.travelbackend.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import java.util.Set;
 
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Client extends User {
 
     private String phoneNumber;
