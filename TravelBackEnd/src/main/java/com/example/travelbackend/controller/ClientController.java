@@ -2,8 +2,7 @@ package com.example.travelbackend.controller;
 
 import com.example.travelbackend.entity.Client;
 import com.example.travelbackend.entity.User;
-import com.example.travelbackend.service.ClientService;
-import com.example.travelbackend.util.Message;
+import com.example.travelbackend.service.ClientService;;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
