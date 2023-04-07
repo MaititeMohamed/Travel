@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -19,6 +20,11 @@ public class ClientService {
     @Autowired
     private RoleRepository roleRepository;
 
+    public Optional<Client> getClientById(Long id){
+        return clientRepository.findById(id);
+    }
+
+    public List<Client> getAllClient(){return  clientRepository.findAll();}
     public Optional<Client> findClientById(Long id) {
         return clientRepository.findById(id);
     }
