@@ -1,6 +1,7 @@
 package com.example.travelbackend.service;
 
 import com.example.travelbackend.entity.Client;
+import com.example.travelbackend.entity.Tour;
 import com.example.travelbackend.repository.ClientRepository;
 import com.example.travelbackend.repository.RoleRepository;
 import com.example.travelbackend.util.Message;
@@ -127,6 +128,9 @@ public class ClientService {
         client.setMessage(message);
         return client;
     }
+
+
+
 
 
 

@@ -1,10 +1,13 @@
 package com.example.travelbackend.service;
 
+import com.example.travelbackend.entity.Client;
 import com.example.travelbackend.entity.Tour;
+import com.example.travelbackend.repository.ClientRepository;
 import com.example.travelbackend.repository.TourRepository;
 import com.example.travelbackend.util.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 
 import java.util.List;
 import java.util.Optional;
@@ -14,7 +17,8 @@ public class TourService {
 
     @Autowired
     private TourRepository tourRepository;
-
+    @Autowired
+    private ClientRepository clientRepository;
 
 
     public Optional<Tour> getTourById(Long id) {
@@ -98,5 +102,14 @@ public class TourService {
         message.setMessage("Tour information updated");
         tour.setMessage(message);
         return tour;
+    }
+
+
+    public void registerClientToTour(Long tourId, Long clientId) {
+        Tour tour = tourRepository.findById(tourId).get();
+        Client client = clientRepository.findById(clientId).get();
+
+        tour.getClients().add(client);
+        tourRepository.save(tour);
     }
 }

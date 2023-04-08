@@ -40,6 +40,11 @@ public class TourController {
     public Tour updateTour(@RequestBody Tour tour) {
         return tourService.updateTour(tour);
     }
+
+    @PostMapping("/registerClientToTour")
+    public  void  registerClientToTour(@PathVariable Long tourId,@PathVariable Long userId ){
+        tourService.registerClientToTour(tourId,userId);
+    }
 }
 
 
