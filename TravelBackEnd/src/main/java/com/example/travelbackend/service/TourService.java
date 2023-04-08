@@ -105,11 +105,5 @@ public class TourService {
     }
 
 
-    public void registerClientToTour(Long tourId, Long clientId) {
-        Tour tour = tourRepository.findById(tourId).get();
-        Client client = clientRepository.findById(clientId).get();
 
-        tour.getClients().add(client);
-        tourRepository.save(tour);
-    }
 }
