@@ -34,10 +34,9 @@ public class SecurityConfig {
                 .cors().disable()
                 .authorizeRequests()
                 .antMatchers("/**/authenticate/**").permitAll()
-                .antMatchers("/**/clients/**").permitAll()
+        //        .antMatchers("/**/clients/**").permitAll()
 //                .antMatchers("/**/Admin/**").hasAuthority("Admin")
-//                .antMatchers("/**/Client/**").hasAuthority("Client")
-//                .antMatchers("/**/Manager/**").hasAnyAuthority("Manager")
+                .antMatchers("/**/api/clients/**").hasAuthority("Client")
                 .and()
 
                 .sessionManagement()

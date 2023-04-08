@@ -20,8 +20,7 @@ public class User {
 
     private String password;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "role_id")
+    @ManyToOne
     private Role role;
 
 

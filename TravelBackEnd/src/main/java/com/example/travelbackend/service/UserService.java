@@ -19,24 +19,13 @@ public class UserService {
     UserRepository  userRepository;
     @Autowired
     RoleRepository roleRepository;
-
-
-
-
-
-
-
-
-
-
-
-
-
     //security
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         User user=userRepository.findUserByEmail(email);
+        System.out.println(user.getRole());
+        return new org.springframework.security.core.userdetails.User(user.getEmail(),user.getPassword(),
+                Collections.singleton(new SimpleGrantedAuthority(user.getRole().getRoleName())));
 
-        return new org.springframework.security.core.userdetails.User(user.getEmail(),user.getPassword(), Collections.singleton(new SimpleGrantedAuthority(user.getRole().getRoleName())));
     }
 //    public User saveUser(User user){
 //        user.setPassword(NoOpPasswordEncoder.getInstance().encode(user.getPassword()));
