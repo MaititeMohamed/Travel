@@ -12,6 +12,10 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { FormsModule } from '@angular/forms';
+import { ClientComponent } from './pages/client/client.component';
+import { TourComponent } from './pages/tour/tour.component';
+import { ReservationComponent } from './pages/reservation/reservation.component';
+import { GuideComponent } from './pages/guide/guide.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,11 @@ import { FormsModule } from '@angular/forms';
     GuidedashboardComponent,
     FooterComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    ClientComponent,
+    TourComponent,
+    ReservationComponent,
+    GuideComponent
   ],
   imports: [
     BrowserModule,

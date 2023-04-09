@@ -8,6 +8,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { AdmindashboardComponent } from './pages/admindashboard/admindashboard.component';
 import { GuidedashboardComponent } from './pages/guidedashboard/guidedashboard.component';
+import { ClientComponent } from './pages/client/client.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,8 @@ const routes: Routes = [
   { path: 'register', component:RegisterComponent  },
   {path:'admin',component:AdmindashboardComponent},
   {path:'guide',component:GuidedashboardComponent},
+  {path:'client',component:ClientComponent},
+
 ];
 
 

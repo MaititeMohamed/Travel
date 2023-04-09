@@ -8,6 +8,7 @@ export class Client {
     phoneNumber:string;
     role!:string;
     password:string;
+    address!:string;
     tour!:Tour;
     constructor(){
         this.firstName="";
