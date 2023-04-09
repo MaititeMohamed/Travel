@@ -3,7 +3,7 @@ import { Tour } from "./tourModel";
 
 export class Reservation{
     id:any;
-    client!:Client;
-    tour!:Tour;
+    client= new Client();
+    tour= new Tour();
 
 }
