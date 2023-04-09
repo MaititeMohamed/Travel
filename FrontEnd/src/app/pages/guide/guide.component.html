@@ -2,9 +2,9 @@
 <main id="main" class="main">
 
     <div class="d-flex  justify-content-between">
-      <h3>List of Client </h3>
+      <h3>List of guide </h3>
       <button type="button" class="btn btn-primary mb-4" data-bs-toggle="modal" data-bs-target="#addclient">
-        Add Client
+        Add guide
       </button>
     </div>
     <table class="table align-middle mb-0 bg-white">
@@ -115,7 +115,7 @@
   
         
           <div class="modal-header">
-            <h4 class="modal-title">update Client</h4>
+            <h4 class="modal-title">update guides</h4>
             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
           </div>
       
@@ -166,13 +166,13 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="deleteModelLabel">Delete Client</h5>
+            <h5 class="modal-title" id="deleteModelLabel">Delete guide</h5>
             <button type="button" class="close btn btn-rounded mb-4" data-bs-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <p>Are you sure you want to delete Client  {{deleteGuide?.firstName}} ?</p>
+            <p>Are you sure you want to delete guide  {{deleteGuide?.firstName}} ?</p>
             <div class="modal-footer">
               <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button> -->
               <button (click)="deleteGuideById(deleteGuide.userId)" class="btn btn-danger" data-dismiss="modal">Yes</button>

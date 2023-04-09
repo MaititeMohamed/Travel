@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
 
 
   public getAllTours(){
-    this.tourService.getAllTourss().subscribe({
+    this.tourService.getAllTours().subscribe({
       next: (result) => {
         console.log(result);
         this.tours = result;

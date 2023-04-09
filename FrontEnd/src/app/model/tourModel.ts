@@ -8,6 +8,7 @@ image!:string;
 description!:string;
 startDate!:Date;
 endDate!:Date;
+// price!:number;
 guide!:Guide;
 
 }

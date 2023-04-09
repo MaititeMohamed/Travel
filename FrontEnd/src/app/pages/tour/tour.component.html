@@ -1,5 +1,189 @@
 <app-navbar></app-navbar>
 <main id="main" class="main">
-<p>tour works!</p>
+    <div class="d-flex  justify-content-between">
+        <h3>List of Tours </h3>
+        <button type="button" class="btn btn-primary mb-4" data-bs-toggle="modal" data-bs-target="#addclient">
+          Add Tour
+        </button>
+      </div>
+      <table class="table align-middle mb-0 bg-white">
+        <thead class="bg-light">
+          <tr>
+            <th>name</th>
+            <th>startDate</th>
+            <th>endDate</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tour of tours">
+            <td>
+              <div class="d-flex align-items-center">
+                <img src="assets/img/logo.png" alt="" style="width: 45px; height: 45px"
+                  class="rounded-circle" />
+                <div class="ms-3">
+                  <p class="fw-bold mb-1">{{tour.name}}</p>
+    
+                </div>
+              </div>
+            </td>
+    
+            <td>
+              <span class="fw-normal mb-1">{{tour.startDate | date:'yyyy-MM-dd'}}</span>
+            </td>
+            <td>
+                <span class="fw-normal mb-1">{{tour.endDate | date:'yyyy-MM-dd'}}</span>
+              </td>
+            <td>
+              <a class="btn btn-link btn-sm btn-rounded">
+                <i (click)="onOpenModal(tour,'edit')" class="fa fa-edit" aria-hidden="true"></i>
+              </a>
+              <a class="btn btn-link btn-sm btn-rounded">
+                <i (click)="onOpenModal(tour,'delete')" data-placement="top" data-original-title="Delete"
+                  class="fa fa-trash" aria-hidden="true"></i>
+              </a>
+            </td>
+          </tr>
+    
+    
+        </tbody>
+      </table>
+          <!-- modal add client  -->
+    <div class="modal" id="addclient">
+        <div class="modal-dialog">
+          <div class="modal-content">
+    
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Add Client</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+    
+            <!-- Modal body -->
+            <div class="modal-body">
+    
+    
+              <form #addForm="ngForm" (ngSubmit)="addTour(addForm)">
+                <div class="form-group">
+                  <label for="firstName">name</label>
+                  <input type="text" ngModel name="name" class="form-control" id="name" placeholder="name"
+                    required>
+                </div>
+                <div class="form-group">
+                  <label for="lastName">image</label>
+                  <input type="text" ngModel name="image" class="form-control" id="image" placeholder="image"
+                    required>
+                </div>
+                <div class="form-group">
+                  <label for="lastName">description</label>
+                  <input type="text" ngModel name="description" class="form-control" id="description" placeholder="description"
+                    required>
+                </div>
+                <div class="form-group">
+                  <label for="lastName">startDate</label>
+                  <input type="date" ngModel name="startDate" class="form-control" id="startDate" placeholder="startDate"
+                    required>
+                </div>
+                <div class="form-group">
+                  <label for="endDate">endDate</label>
+                  <input type="date" ngModel name="endDate" class="form-control" id="endDate" placeholder="endDate" required>
+                </div>
+    
+                <!-- <div class="form-group mb-3">
+                  <label for="price">price</label>
+                  <input type="price" ngModel name="price" class="form-control" id="price" placeholder="price"
+                    required>
+                </div> -->
+    
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end modal client  -->
+
+
+        <!-- modal update client  -->
+    <div class="modal" id="updateClient">
+        <div class="modal-dialog">
+          <div class="modal-content">
+    
+          
+            <div class="modal-header">
+              <h4 class="modal-title">update tour</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+        
+            <div class="modal-body">
+              <form #editForm="ngForm">
+                <div class="form-group">
+                    <label for="firstName">name</label>
+                    <input type="text" ngModel="{{editTour?.name}}" name="name" class="form-control" id="name" placeholder="name"
+                      required>
+                  </div>
+                  <div class="form-group">
+                    <label for="lastName">image</label>
+                    <input type="text" ngModel="{{editTour?.image}}" name="image" class="form-control" id="image" placeholder="image"
+                      required>
+                  </div>
+                  <div class="form-group">
+                    <label for="lastName">description</label>
+                    <input type="text" ngModel="{{editTour?.description}}" name="description" class="form-control" id="description" placeholder="description"
+                      required>
+                  </div>
+                  <div class="form-group">
+                    <label for="lastName">startDate</label>
+                    <input type="date" ngModel="{{editTour?.startDate}}" name="startDate" class="form-control" id="startDate" placeholder="startDate"
+                      required>
+                  </div>
+                  <div class="form-group">
+                    <label for="endDate">endDate</label>
+                    <input type="date" ngModel="{{editTour?.endDate}}" name="endDate" class="form-control" id="endDate" placeholder="endDate" required>
+                  </div>
+      
+                  <!-- <div class="form-group mb-3">
+                    <label for="price">price</label>
+                    <input type="price" ngModel="{{editTour?.price}}" name="price" class="form-control" id="price" placeholder="price"
+                      required>
+                  </div> -->
+      
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button [disabled]="editForm.invalid" (click)="updateTour(editForm.value)" type="submit"
+                    class="btn btn-primary">Save changes</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end update client  -->
+
+          <!-- Delete Modal -->
+    <div class="modal fade" id="deleteClient" tabindex="-1" role="dialog" aria-labelledby="deleteModelLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModelLabel">Delete Tour</h5>
+          <button type="button" class="close btn btn-rounded mb-4" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure you want to delete Tour  {{deleteTour?.name}} ?</p>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button> -->
+            <button (click)="deleteTourById(deleteTour.id)" class="btn btn-danger" data-dismiss="modal">Yes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Delete Modal -->
 </main>
 <app-sidebar></app-sidebar>
