@@ -8,6 +8,9 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { AdmindashboardComponent } from './pages/admindashboard/admindashboard.component';
 import { GuidedashboardComponent } from './pages/guidedashboard/guidedashboard.component';
+import { FooterComponent } from './layout/footer/footer.component';
+import { NavbarComponent } from './layout/navbar/navbar.component';
+import { SidebarComponent } from './layout/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { GuidedashboardComponent } from './pages/guidedashboard/guidedashboard.c
     LoginComponent,
     RegisterComponent,
     AdmindashboardComponent,
-    GuidedashboardComponent
+    GuidedashboardComponent,
+    FooterComponent,
+    NavbarComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
