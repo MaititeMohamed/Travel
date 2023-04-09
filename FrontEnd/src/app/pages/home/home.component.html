@@ -86,34 +86,23 @@
     <div class="d-flex  justify-content-center m-3" >
         <h1 >Our Most Popular Tour </h1>
     </div>
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col">
+  <div  class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let tour of tours">
       <div class="card h-100">
-        <img src="..." class="card-img-top" alt="...">
+        <img src="{{tour.image}}" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <h5 class="card-title">{{tour.name}}</h5>
+          <p class="card-text">{{tour.description}}</p>
+          <p class="card-text"> form {{tour.startDate | date:'yyyy-MM-dd'}} to {{tour.endDate | date:'yyyy-MM-dd'}}</p>
+          <div class="d-flex justify-content-between">
+          <span class="badge text-bg-warning">100 DH</span>
+          <button type="button" class="btn btn-success">Book Now</button>
+        </div>
         </div>
       </div>
     </div>
-    <div class="col">
-      <div class="card h-100">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a short card.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card h-100">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-        </div>
-      </div>
-    </div>
+   
+  
     
    
   </div>

@@ -9,4 +9,5 @@ description!:string;
 startDate!:Date;
 endDate!:Date;
 guide!:Guide;
+
 }
