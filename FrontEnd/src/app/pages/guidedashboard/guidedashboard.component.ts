@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { StorageService } from 'src/app/service/storageService';
 
 @Component({
   selector: 'app-guidedashboard',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GuidedashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private storageService : StorageService,private router:Router) { }
 
   ngOnInit(): void {
-  }
+    if(this.storageService.isLoggedIn()){
+      if (!(this.storageService.getAuthority() =="Guide" )){
+        this.router.navigate(["login"]);
+      }
+     
+    }else{
+      this.router.navigate(["login"]);
+    }
+   }
 
 }

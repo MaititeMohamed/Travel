@@ -26,9 +26,12 @@
                 <a class="nav-link" href="#">About</a>
               </li>
             </ul>
-              <form class="d-flex" role="search">
+              <form class="d-flex" role="search" *ngIf="statusLogin==false">
                 <a routerLink="/register" class="btn btn-outline-success me-2" >Register</a>
                 <a routerLink="/login" class="btn btn-outline-success" >Login</a>
+              </form>
+              <form class="d-flex" role="search" *ngIf="statusLogin!==false" >
+                <a routerLink="/logout " class="btn btn-outline-success" >log out </a>
               </form>
           </div>
         </div>

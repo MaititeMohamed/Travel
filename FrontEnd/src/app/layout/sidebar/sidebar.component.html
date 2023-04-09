@@ -17,7 +17,7 @@
           <span><i class="fa fa-users" aria-hidden="true"></i> clients</span>
         </a>
       </li><!-- End guide Nav -->
-      <li  class="nav-item active">
+      <li  *ngIf="isGuide==false" class="nav-item active">
         <a class="nav-link "   routerLink="/guides">
           <span><i class="fa fa-glide" aria-hidden="true"></i> guides</span>
         </a>
