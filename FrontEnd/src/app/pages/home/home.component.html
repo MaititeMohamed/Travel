@@ -31,7 +31,7 @@
                 <a routerLink="/login" class="btn btn-outline-success" >Login</a>
               </form>
               <form class="d-flex" role="search" *ngIf="statusLogin!==false" >
-                <a routerLink="/logout " class="btn btn-outline-success" >log out </a>
+                <a (click)="logout()" class="btn btn-outline-success" >log out </a>
               </form>
           </div>
         </div>

@@ -45,5 +45,9 @@ export class HomeComponent implements OnInit {
       },
     );
   }
+  public logout(){
+    this.storageService.clean();
+    this.router.navigate(["/login"]);
+  }
 
 }
