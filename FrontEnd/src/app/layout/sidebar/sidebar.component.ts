@@ -10,6 +10,7 @@ import { StorageService } from 'src/app/service/storageService';
 export class SidebarComponent implements OnInit {
 
   isGuide=false;
+  isAdmin=false;
   constructor(private storageService : StorageService,private router:Router) { }
 
   ngOnInit(): void {
@@ -18,6 +19,11 @@ export class SidebarComponent implements OnInit {
     if(role=="Guide"){
       this.isGuide=true;
     }
+    if(role=="Admin"){
+      this.isAdmin=true;
+    }
+    
+  
   }
 
 }

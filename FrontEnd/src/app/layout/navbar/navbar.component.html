@@ -28,9 +28,9 @@
 
       <div class="d-flex me-2">
         <a  class="btn  me-2" >{{firstName}}</a>
-        <form  #addForm="ngForm" (ngSubmit)="logout()" role="search" >
+        <form   role="search" >
           
-          <a type="submit" class="btn btn-outline-success" >logout </a>
+          <a  (click)="logout()" class="btn btn-outline-success" >logout </a>
         </form>
       </div>
         

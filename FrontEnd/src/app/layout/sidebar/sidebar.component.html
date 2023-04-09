@@ -4,7 +4,11 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item active">
-        <a class="nav-link "  routerLink="/dashboard">
+        <a *ngIf="isAdmin==true" class="nav-link "  routerLink="/admin">
+          <i class="fa fa-dashboard" aria-hidden="true"></i>
+          <span>Dashboard</span>
+        </a>
+        <a *ngIf="isGuide==true" class="nav-link "  routerLink="/guide">
           <i class="fa fa-dashboard" aria-hidden="true"></i>
           <span>Dashboard</span>
         </a>
@@ -18,7 +22,7 @@
         </a>
       </li><!-- End guide Nav -->
       <li  *ngIf="isGuide==false" class="nav-item active">
-        <a class="nav-link "   routerLink="/guide">
+        <a class="nav-link "   routerLink="/guides">
           <span><i class="fa fa-glide" aria-hidden="true"></i> guides</span>
         </a>
       </li><!-- End tours Nav -->

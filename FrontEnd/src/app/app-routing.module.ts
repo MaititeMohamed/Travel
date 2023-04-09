@@ -9,6 +9,9 @@ import { RegisterComponent } from './pages/register/register.component';
 import { AdmindashboardComponent } from './pages/admindashboard/admindashboard.component';
 import { GuidedashboardComponent } from './pages/guidedashboard/guidedashboard.component';
 import { ClientComponent } from './pages/client/client.component';
+import { TourComponent } from './pages/tour/tour.component';
+import { ReservationComponent } from './pages/reservation/reservation.component';
+import { GuideComponent } from './pages/guide/guide.component';
 
 
 const routes: Routes = [
@@ -19,7 +22,9 @@ const routes: Routes = [
   {path:'admin',component:AdmindashboardComponent},
   {path:'guide',component:GuidedashboardComponent},
   {path:'client',component:ClientComponent},
-
+  {path:'tour',component:TourComponent},
+  {path:'reservation',component:ReservationComponent},
+  {path:'guides',component:GuideComponent},
 ];
 
 

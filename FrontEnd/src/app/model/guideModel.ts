@@ -5,5 +5,6 @@ export class Guide{
     email!:string;
     password!:string;
     role!:string;
+    address!:string;
     phoneNumber!:string;
 }
