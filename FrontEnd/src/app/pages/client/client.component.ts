@@ -45,7 +45,7 @@ export class ClientComponent implements OnInit {
     );
   }
   
-  public UpdateEmloyee(client: Client): void {
+  public updateClient(client: Client): void {
     this.clientService.updateClient(client).subscribe(
       (response: Client) => {
         console.log(response);
