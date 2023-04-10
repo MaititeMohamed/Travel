@@ -26,14 +26,13 @@ export class HomeComponent implements OnInit {
     private userService:UserService,private reservationService:ReservationService) { }
   statusLogin=false;
   ngOnInit(): void {
- 
+    this.getAllTours();
     if(this.storageService.isLoggedIn()){
       this.statusLogin=true;
       const email=this.storageService.getUserName();
       this.getUserByEmail(email);
-      this.getAllTours();
      }
-    
+     this.getAllTours();
   }
 
 
@@ -77,7 +76,7 @@ export class HomeComponent implements OnInit {
 
   public logout(){
     this.storageService.clean();
-    this.router.navigate(["/login"]);
+    this.router.navigate(["/home"]);
   }
 
 }

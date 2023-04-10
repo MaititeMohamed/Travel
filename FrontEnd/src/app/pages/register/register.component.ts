@@ -24,6 +24,7 @@ export class RegisterComponent implements OnInit {
         console.log(response);
         addForm.reset();
         alert('Acount has been created');
+        this.router.navigate(["login"]);
       },
       (error: HttpErrorResponse) => {
         alert(error.message);

@@ -24,6 +24,7 @@ export class RegisterguideComponent implements OnInit {
       (response: Guide) => {
         console.log(response);
         alert('Acount has been created');
+        this.router.navigate(["login"]);
         addForm.reset();
       },
       (error: HttpErrorResponse) => {

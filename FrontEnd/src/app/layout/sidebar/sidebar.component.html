@@ -16,7 +16,7 @@
       <li  class="nav-item active">
        
       </li><!-- End Clients Nav -->
-      <li  class="nav-item active">
+      <li *ngIf="isGuide==false" class="nav-item active">
         <a class="nav-link "   routerLink="/client">
           <span><i class="fa fa-users" aria-hidden="true"></i> clients</span>
         </a>
