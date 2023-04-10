@@ -12,6 +12,7 @@ import { ClientComponent } from './pages/client/client.component';
 import { TourComponent } from './pages/tour/tour.component';
 import { ReservationComponent } from './pages/reservation/reservation.component';
 import { GuideComponent } from './pages/guide/guide.component';
+import { RegisterguideComponent } from './pages/registerguide/registerguide.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'home', component:HomeComponent  },
   { path: 'login', component:LoginComponent  },
   { path: 'register', component:RegisterComponent  },
+  { path: 'registerguide', component:RegisterguideComponent  },
   {path:'admin',component:AdmindashboardComponent},
   {path:'guide',component:GuidedashboardComponent},
   {path:'client',component:ClientComponent},
